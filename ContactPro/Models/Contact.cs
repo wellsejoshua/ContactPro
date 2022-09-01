@@ -46,7 +46,7 @@ namespace ContactPro.Models
 
     [Required]
     [EmailAddress]
-    public int Email { get; set; }
+    public string? Email { get; set; }
 
     [Required]
     [Display(Name ="Phone Number")]

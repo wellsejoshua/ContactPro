@@ -4,7 +4,23 @@ namespace ContactPro.Models.Enums
 {
   public enum States
   {
-    //states and territories
+    //states 
+    //AK,
+    //AL,
+    //AR,
+    //AS,
+    //AZ,
+    //CA,
+    //CO,
+    //CT,
+    //DC,
+    //DE,
+    //FL,
+    //GA,
+    //GU,
+    //HI,
+
+
     // States
     [Description("Alabama")] AL = 1,
     [Description("Alaska")] AK = 2,
