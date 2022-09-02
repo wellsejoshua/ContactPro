@@ -43,7 +43,12 @@ namespace ContactPro.Controllers
       string appUserId = _userManager.GetUserId(User);
 
       //return userID and it's associated contacts and categories
-      
+
+      //tsting null stuff
+      //AppUser appUser2 = _context.Users.FirstOrDefault(c => c.Id == appUserId);
+
+      //
+
       AppUser appUser = _context.Users
                                 .Include(c => c.Contacts)
                                 .ThenInclude(c => c.Categories)
