@@ -20,6 +20,11 @@ namespace ContactPro.Models
     [NotMapped]
     public string FullName { get { return $"{FirstName} {LastName}"; } }
 
+    public virtual ICollection<Contact>? Contacts { get; set; } = new HashSet<Contact>();
+    public virtual ICollection<Category>? Categories { get; set; } = new HashSet<Category>();
+
+
+
 
   }
 }

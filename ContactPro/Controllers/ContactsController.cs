@@ -14,7 +14,6 @@ using ContactPro.Services.Interfaces;
 using ContactPro.Services;
 
 
-
 namespace ContactPro.Controllers
 {
   public class ContactsController : Controller
@@ -37,32 +36,46 @@ namespace ContactPro.Controllers
 
     // GET: Contacts
     [Authorize]
-    public async Task<IActionResult> Index()
+    public IActionResult Index(int categoryId)
     {
-      //video 24 binding Categories
       //appUser my expanded IdentityUser include statement filters the contacts based on the logged in appUser(does a join)
       var contacts = new List<Contact>();
       string appUserId = _userManager.GetUserId(User);
-      var appUser = _context.Users.FirstOrDefault(u=>u.Id == appUserId);
+
+      //return userID and it's associated contacts and categories
       
+      AppUser appUser = _context.Users
+                                .Include(c => c.Contacts)
+                                .ThenInclude(c => c.Categories)
+                                .FirstOrDefault(u => u.Id == appUserId);
 
-      ////return userID and it's associated contacts and categories
-      ////AppUser appUser = await _context.Users.Include(c => c.Contacts);
 
-      //contacts = await _context.Contacts.Where(c=>c.AppUserId == appUserId).ToListAsync();
-      contacts = _context.Contacts.Where(c => c.AppUserId == appUserId)
-                                  .OrderBy(c => c.LastName)
-                                  .ThenBy(c =>c.FirstName)
-                                  .ToList();
-      var categories = _context.Categories.Where(c => c.AppUserId == appUserId).ToList();
+      var categories = appUser.Categories;
 
-      ViewData["CategoryId"] = new SelectList(categories, "Id", "Name");
+      if (categoryId == 0)
+      {
+        contacts = appUser.Contacts.OrderBy(c => c.LastName)
+                           .ThenBy(c => c.FirstName).ToList();
+      }
+      else
+      {
+        contacts = appUser.Categories.FirstOrDefault(c=> c.Id ==categoryId)
+                          .Contacts
+                          .OrderBy(c => c.LastName)
+                          .ThenBy(c => c.FirstName)
+                          .ToList();
+      }
+
+
+
+      ViewData["CategoryId"] = new SelectList(categories, "Id", "Name", categoryId);
 
       return View(contacts);
 
-      //these two were original lines of code
-      //var applicationDbContext = _context.Contacts.Include(c => c.AppUser)
-      //return View(await applicationDbContext.ToListAsync());
+      //var applicationDbContext = _context.Contacts.Include(c => c.AppUser);
+
+      // return View(await applicationDbContext.ToListAsync());
+
     }
 
     // GET: Contacts/Details/5
