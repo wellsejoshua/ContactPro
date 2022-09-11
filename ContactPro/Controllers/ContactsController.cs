@@ -38,22 +38,13 @@ namespace ContactPro.Controllers
     [Authorize]
     public IActionResult Index(int categoryId)
     {
-      //appUser my expanded IdentityUser include statement filters the contacts based on the logged in appUser(does a join)
       var contacts = new List<Contact>();
       string appUserId = _userManager.GetUserId(User);
-
-      //return userID and it's associated contacts and categories
-
-      //tsting null stuff
-      //AppUser appUser2 = _context.Users.FirstOrDefault(c => c.Id == appUserId);
-
-      //
 
       AppUser appUser = _context.Users
                                 .Include(c => c.Contacts)
                                 .ThenInclude(c => c.Categories)
                                 .FirstOrDefault(u => u.Id == appUserId);
-
 
       var categories = appUser.Categories;
 
@@ -71,15 +62,9 @@ namespace ContactPro.Controllers
                           .ToList();
       }
 
-
-
       ViewData["CategoryId"] = new SelectList(categories, "Id", "Name", categoryId);
 
       return View(contacts);
-
-      //var applicationDbContext = _context.Contacts.Include(c => c.AppUser);
-
-      // return View(await applicationDbContext.ToListAsync());
 
     }
 

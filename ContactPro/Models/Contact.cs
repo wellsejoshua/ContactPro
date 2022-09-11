@@ -64,10 +64,6 @@ namespace ContactPro.Models
     [NotMapped]
     public IFormFile? ImageFile { get; set; }
 
-
-
-
-
     //virtual navigation properties
     public virtual AppUser? AppUser { get; set; }
     //makes empty set of categories until we add some in...Collections 
