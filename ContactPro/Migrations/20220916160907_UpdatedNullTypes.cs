@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace ContactPro.Data.Migrations
+namespace ContactPro.Migrations
 {
-    public partial class AppUserRemoveVirtualNulls : Migration
+    public partial class UpdatedNullTypes : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
