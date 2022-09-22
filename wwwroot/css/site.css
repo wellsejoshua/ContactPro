@@ -9,6 +9,10 @@
   --cf-light-color: #eeeeee;
   --cf-title-font: 'Fira Sans', sans-serif;
   --cf-body-font: 'Roboto', sans-serif;
+  --cf-body-background-test-color: #050a30;
+  --cb-orange-color: #ff5722;
+  --cb-greylogo-color: #f4f6fc;
+  --cb-greyring-color: #2d2929;
 }
 
 html,
@@ -21,7 +25,8 @@ body {
   background-color: var(--cf-primaryColorLight);
   display: flex;
   flex-direction: column;
-  color: var(--cf-dark-color);
+  /*color: var(--cf-dark-color);*/
+  color: var(--cf-primaryColorLight);
   font-family: var(--cf-body-font);
   font-weight: 400;
   font-size: 1.2rem;
@@ -63,7 +68,11 @@ body {
 }
 
 nav {
-  background-color: var(--cf-primaryColorLight)
+  /*background-color: var(--cf-primaryColorLight)*/
+  /*background-color: #0869b8;*/
+  /*background-color: #35355e;*/
+  /*background-color: var(--cb-greyring-color);*/
+  background-color: #1f1717;
 }
 
 h1,
@@ -93,7 +102,8 @@ main {
 }
 
 .texthighlight {
-  color: var(--cf-primaryColor);
+  /*color: var(--cf-primaryColor);*/
+  color: var(--cb-orange-color);
 }
 
 .heroTitle {
@@ -158,7 +168,9 @@ main {
 
 .footer {
   flex-shrink: 0;
-  background-color: var(--cf-secondaryColor);
+  background-color: #1f1717;
+  /*background-color: #695858;*/
+  /*background-color: var(--cf-secondaryColor);*/
 }
 
 .copyright {
