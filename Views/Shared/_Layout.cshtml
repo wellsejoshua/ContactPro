@@ -33,9 +33,9 @@
     <header>
         <!--New Nav Bar-->
 
-        <nav class="navbar navbar-expand-md navbar-light fixed-top border-bottom border-light navShadow">
+        <nav class="navbar navbar-expand-md fixed-top border-bottom border-light navbar-dark navShadow darkbackground">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/img/ContactPro.png" height=45></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/img/grouptText.png" height=45></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
                         @if (SignInManager.IsSignedIn(User))
@@ -78,12 +78,12 @@
     <footer class="footer container-fluid">
         <div class="row align-items-center py-2">
             <div class="col">
-                <div class="row align-items-center gy-2">
+                <div class="row align-items-center gy-2 text-light">
                     <div class="col d-flex justify-content-center justify-content-md-start order-last order-md-first copyright">
                         &copy; 2022 CodeByWells.com All Rights Reserved
                     </div>
                     <div class="col d-flex justify-content-center">
-                        <img src="/img/ContactPro.png" height="50">
+                        <img src="/img/grouptText1000by250.png" height="50">
                     </div>
                     <div class="col-12 col-md d-flex justify-content-center justify-content-md-end">
                         <a href="#" class="socialicons"><i class="bi bi-linkedin p-2 "></i></a>

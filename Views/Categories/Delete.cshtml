@@ -20,6 +20,10 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a class="blackbodytext" asp-action="Index">Back to List</a>
     </form>
 </div>
+
+@section Scripts{
+    <link rel="stylesheet" href="/css/category.css" asp-append-version="true" />
+}

@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">@Html.DisplayFor(modelItem => contact.FullName)</h5>
+                                    <h5 class="card-title blackbodytext">@Html.DisplayFor(modelItem => contact.FullName)</h5>
                                     <address class="card-text">
                                         @Html.DisplayFor(modelItem => contact.Address1)<br>
                                         @Html.DisplayFor(modelItem => contact.Address2)<br>
@@ -83,7 +83,7 @@
     </div>
     </div>
 
-@section scripts{
+@section Scripts{
     <!--Sweet Alerts-->
     <script>
         let message = '@(ViewBag.SwalMessage)';

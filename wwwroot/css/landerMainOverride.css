@@ -1,7 +1,3 @@
-﻿main {
-  background-color: var(--cf-body-background-test-color);
-}
-
-body {
+﻿body {
   color: var(--cf-light-color);
 }

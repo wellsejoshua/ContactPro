@@ -11,7 +11,7 @@ namespace ContactPro.Helpers
       //use name of whatever environmet variable is given by hosting
       var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
-      return string.IsNullOrEmpty(databaseUrl) ? connectionString : BuildConnectionString(databaseUrl);
+      return String.IsNullOrEmpty(databaseUrl) ? connectionString : BuildConnectionString(databaseUrl);
 
     }
 
